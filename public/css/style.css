@@ -1,0 +1,14 @@
+@font-face {
+    font-family: PressStart2P-Regualr;
+    src: url("PressStart2P-Regular.ttf");
+}
+
+h1 {
+    font-size: 100px;
+}
+
+body {
+    color: #FF040C;
+    font-family: PressStart2P-Regualr, Arial;
+    background-color: #35FF25;
+}
