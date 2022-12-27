@@ -6,10 +6,11 @@ html
           link(rel="stylesheet", href=css, type="text/css")
      body
           h2#hello_text Hello #{player}
-          if player == creator && started == "false"
+          if player == creator && started == false
                form(action="/start/"+lobby, method="post")
                     button(type="start", id="start_button") START GAME! 
 
-          else if started
+          else if started == true
                h2#target_text you must give a gift to #{target}
+          h2 #{started}
           h2 #{target}

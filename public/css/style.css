@@ -18,6 +18,7 @@ body {
     font-family: PressStart2P-Regular, Arial;
     background-color: #35FF25;
     text-align: center;
+    align-content: center;
 }
 
 .create_input{
@@ -151,9 +152,15 @@ body {
 
 #hello_text{
     margin-bottom: 40vh;
+    align-self: center;
 }
 
 #target_text{
     font-size: 4em;
     padding: .5em;
+}
+
+#welcome_text{
+    padding: 1em;
+    margin: 1em;
 }

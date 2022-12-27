@@ -78,7 +78,7 @@ app.post('/login/:lobby/:player', (req,res) => {
         players.push(key)
     });
     if (lobby.STARTED == true) {
-        var target = req.params.player
+        var target = lobby.ASSIGNMENT[req.params.player]
     } else {
         var target = ""
     }
@@ -107,7 +107,7 @@ app.post('/login/:lobby', (req,res) => {
     lobby.PLAYERS[req.fields.name] = req.fields.code;
     var creator = lobby.CREATOR;
     if (lobby.STARTED == true) {
-        var target = req.fields.name
+        var target = lobby.ASSIGNMENT[req.fields.name]
     } else {
         var target = ""
     }
