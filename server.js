@@ -2,13 +2,13 @@ const express = require('express');
 const fs = require('fs')
 const formidableMiddleware = require('express-formidable');
 const path = require('path');
+const port = 8000;
 const css_file = "/css/style.css"
 var cookieParser = require('cookie-parser');
 const { render } = require('pug');
 
 
 const app = express();
-const port = 8000;
 const domain = 'whogiftsashit.us';
 
 const santa_loc = './santa.json';
