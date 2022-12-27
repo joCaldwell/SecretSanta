@@ -1,0 +1,27 @@
+
+doctype html
+html
+    head
+        title login
+        link(rel="stylesheet", href=css, type="text/css")
+    body
+    h2 welcome to #{game}
+    p if you are already in the game enter your code next to your name otherwise enter a name and code
+    div(id="create_form")
+        div(class="grid_container" id="login_grid")
+            div
+                ul(id="players_login_list")
+                    each val in players
+                        div(id="player_form")
+                            p(class="code_label") #{val}
+                            form(action="/login/"+game+"/"+val, method="post") 
+                                label(for="code" class="code_label") Code: 
+                                input(name="code" class="code_input")
+                                button(type = "submit", class="code_submit") SUBMIT!
+            div(id="login_form")
+                form(action="/login/"+game, method="post" class="grid_container" id="login_right") 
+                    label(for="name" class="right_label") Your Name: 
+                    input(name="name" class="right_input")
+                    label(for="code" class="right_label") Your Code: 
+                    input(name="code" class="right_input")
+                    button(type = "submit", id="login_submit") SUBMIT!

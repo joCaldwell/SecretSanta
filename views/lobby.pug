@@ -1,0 +1,14 @@
+
+doctype html
+html
+     head
+          title lobby
+          link(rel="stylesheet", href=css, type="text/css")
+     body
+          h2#hello_text Hello #{player}
+          if player == creator && !started
+               form(action="/start/"+lobby, method="post")
+                    button(type="start", id="start_button") START GAME! 
+
+          if started 
+               h2#target_text you must give a gift to #{target}

@@ -1,14 +1,159 @@
 @font-face {
-    font-family: PressStart2P-Regualr;
+    font-family: PressStart2P-Regular;
     src: url("PressStart2P-Regular.ttf");
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 8em;
+}
+
+h2 {
+    font-size: 4em;
 }
 
 body {
+    margin: auto;
+    padding: auto;
     color: #FF040C;
-    font-family: PressStart2P-Regualr, Arial;
+    font-family: PressStart2P-Regular, Arial;
     background-color: #35FF25;
+    text-align: center;
+}
+
+.create_input{
+    font-size: 1.5em;
+}
+
+.create_label{
+    font-size: 2.5em;
+}
+
+.code_input{
+    font-size: 1.9em;
+    width: 75%;
+    margin-bottom: 2vh;
+}
+
+.code_submit{
+    font-size: 1.9em;
+}
+
+.code_label{
+    font-size: 1.9em;
+}
+
+.grid_container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 10vh;
+    top:100px;
+    padding: 1em;
+}
+
+.home_button {
+    position: relative;
+    margin: 100px;
+    text-decoration: none;
+    font-size: 3.2em;
+    border-style: dotted;
+    border-width: .3em;
+    border-radius: .5em;
+    padding: .2em;
+    color: black;
+}
+
+#h_button_2{
+    top:14vh;
+}
+
+.home_button:hover {
+    border-style: double;
+    border-width: .3em;
+    border-radius: 1em;
+    margin: 2em;
+    padding: .7em;
+    color: red;
+    box-shadow: 0 0 .5em .5em green;
+}
+
+#break-after-grid{
+    display: block;
+    margin-bottom: 3em;
+}
+
+#login_grid{
+    grid-template-columns: 30% auto;
+}
+
+.lobby_link{
+    position: relative;
+    margin: 1em;
+    padding: .25em;
+    font-size: 3em;
+    text-decoration: none;
+    border-radius: .3em;
+    border-width: .08em;
+    border-style: solid;
+}
+
+#lobby_list{
+    display: grid;
+}
+
+#player_form{
+    margin-bottom: 4vh;
+    padding:.3em;
+    border-style: double;
+    border-width: 3px;
+}
+
+#login_submit{
+    font-size: 2em;
+    width:80%;
+    transform: translateX(50%);
+    right: 50%;
+}
+#login_form{
+    display: grid;
+    row-gap: 8vh;
+}
+
+#login_right{
+    font-size: 1.9em;
+    height: fit-content;
+    align-items: center;
+}
+
+#right_input{
+    height: .5em;
+}
+
+#login_form_grid{
+    grid-template-columns: 40% auto;
+}
+
+#create_title{
+    font-size: 4em;
+}
+
+#submit_button{
+    font-size: 2em;
+    background-color: #ffc0db;
+    color: #aF040C;
+    width:90vw;
+    height:4em;
+    border-radius: 1em;
+}
+
+#start_button {
+    font-size: 3em;
+}
+
+#hello_text{
+    margin-bottom: 40vh;
+}
+
+#target_text{
+    font-size: 4em;
+    padding: .5em;
 }
