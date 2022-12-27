@@ -77,9 +77,13 @@ app.post('/login/:lobby/:player', (req,res) => {
     Object.entries(lobby.PLAYERS).forEach(([key, val]) => {
         players.push(key)
     });
+    if (lobby.STARTED == true) {
+        var target = req.params.player
+    } else {
+        var target = ""
+    }
     player_code = lobby.PLAYERS[req.params.player];
     entered_code = req.fields.code;
-    console.log()
     if (entered_code != player_code) {
         res.render('login', {
             game: req.params.lobby,
@@ -93,15 +97,20 @@ app.post('/login/:lobby/:player', (req,res) => {
         creator: creator,
         lobby: req.params.lobby,
         started: lobby.STARTED,
-        target: lobby.ASSIGNMENT[req.cookies.player]
+        target: target
     })
 });
 
 app.post('/login/:lobby', (req,res) => {
     res.cookie('player', req.fields.name);
-    lobby = db[req.params.lobby];
+    var lobby = db[req.params.lobby];
     lobby.PLAYERS[req.fields.name] = req.fields.code;
-    creator = lobby.CREATOR;
+    var creator = lobby.CREATOR;
+    if (lobby.STARTED == true) {
+        var target = req.fields.name
+    } else {
+        var target = ""
+    }
     writeJson();
     res.render('lobby', {
         css: css_file,
@@ -109,7 +118,7 @@ app.post('/login/:lobby', (req,res) => {
         creator:  creator,
         lobby: req.params.lobby,
         started: lobby.STARTED,
-        target: lobby.ASSIGNMENT[req.cookies.player]
+        target: target
     });
 });
 
@@ -133,7 +142,7 @@ app.post('/start/:lobby', (req,res) => {
     // algo for making game start
     baseIndex = Math.floor(Math.random() * players.length) 
     recAlgo(players, baseIndex, players[baseIndex]);
-    lobby.STARTED = false;
+    lobby.STARTED = true;
     writeJson();
     res.render('lobby', {
         css: css_file,

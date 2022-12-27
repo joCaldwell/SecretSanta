@@ -124,8 +124,8 @@ body {
     align-items: center;
 }
 
-#right_input{
-    height: .5em;
+.right_input{
+    font-size: 1.7em;
 }
 
 #login_form_grid{
